@@ -92,7 +92,7 @@ const en: Content = {
     contact: "Contact",
     rights: "All rights reserved.",
   },
-  comingSoon: "Coming soon to the App Store",
+  comingSoon: "Coming Soon",
   consent: {
     text: "We use privacy-friendly analytics to improve Inkprep. You can accept or decline.",
     accept: "Accept",

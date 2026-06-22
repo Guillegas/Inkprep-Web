@@ -10,7 +10,7 @@ export const LEGAL_ENTITY = "Guillermo Andújar Martínez"; // data controller (
 // therefore non-functional until launch. At publish: set the real URL.
 // iOS ships first; Android (Google Play) is planned later — flip PLAY_STORE_AVAILABLE.
 export const APP_STORE_URL = "#";
-export const APP_STORE_AVAILABLE = true;
+export const APP_STORE_AVAILABLE = false;
 
 export const PLAY_STORE_URL = "#";
 export const PLAY_STORE_AVAILABLE = false;

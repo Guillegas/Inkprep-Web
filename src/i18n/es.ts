@@ -92,7 +92,7 @@ const es: Content = {
     contact: "Contacto",
     rights: "Todos los derechos reservados.",
   },
-  comingSoon: "Próximamente en la App Store",
+  comingSoon: "Próximamente",
   consent: {
     text: "Usamos analítica respetuosa con la privacidad para mejorar Inkprep. Puedes aceptar o rechazar.",
     accept: "Aceptar",

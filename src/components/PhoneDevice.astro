@@ -1,0 +1,22 @@
+---
+import "devices.css/dist/devices.min.css";
+interface Props { src?: string; alt?: string; }
+const { src, alt = "Inkprep app screen" } = Astro.props;
+---
+<div class="device device-iphone-14-pro">
+  <div class="device-frame">
+    {src ? (
+      <img class="device-screen" src={src} alt={alt} />
+    ) : (
+      <div class="device-screen flex items-center justify-center bg-gradient-to-b from-[#161616] to-black">
+        <span class="font-display text-5xl font-bold text-white">Inkprep</span>
+      </div>
+    )}
+  </div>
+  <div class="device-stripe"></div>
+  <div class="device-header"></div>
+  <div class="device-sensors"></div>
+  <div class="device-btns"></div>
+  <div class="device-power"></div>
+  <div class="device-home"></div>
+</div>
