@@ -1,0 +1,25 @@
+---
+import { getContent, type Lang } from "../i18n";
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const c = getContent(lang);
+---
+<section id="faq" class="px-5 py-20">
+  <div class="mx-auto max-w-3xl">
+    <div class="reveal text-center">
+      <span class="text-xs font-semibold tracking-[0.25em] text-white/40">{c.faq.label}</span>
+      <h2 class="mt-4 font-[var(--font-display)] text-3xl font-bold sm:text-4xl">{c.faq.heading}</h2>
+    </div>
+    <div class="mt-10 space-y-3">
+      {c.faq.items.map((item) => (
+        <details class="reveal glass group rounded-2xl p-5">
+          <summary class="flex cursor-pointer list-none items-center justify-between font-semibold">
+            {item.q}
+            <span class="text-[var(--color-ink-crimson)] transition group-open:rotate-45">+</span>
+          </summary>
+          <p class="mt-3 text-white/60">{item.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
