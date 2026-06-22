@@ -32,11 +32,12 @@ export interface Content {
   features: { label: string; heading: string; items: Feature[] };
   brands: { label: string; heading: string; caption: string };
   input: {
-    label: string;
-    heading: string;
-    body: string;
-    disclaimerTitle: string;
-    disclaimer: string;
+    cleanEmoji: string;
+    cleanTitle: string;
+    cleanBody: string;
+    accuracyEmoji: string;
+    accuracyTitle: string;
+    accuracyBody: string;
   };
   faq: { label: string; heading: string; items: FaqItem[] };
   cta: { heading: string; sub: string };

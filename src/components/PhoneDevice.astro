@@ -1,11 +1,28 @@
 ---
 import "devices.css/dist/devices.min.css";
-interface Props { src?: string; alt?: string; }
-const { src, alt = "Inkprep app screen" } = Astro.props;
+interface Props {
+  src?: string;
+  /** Optional looping video (e.g. "/screens/demo.mp4"). Falls back to `src` as poster. */
+  video?: string;
+  alt?: string;
+}
+const { src, video, alt = "Inkprep app screen" } = Astro.props;
 ---
 <div class="device device-iphone-14-pro">
   <div class="device-frame">
-    {src ? (
+    {video ? (
+      <video
+        class="device-screen device-video"
+        poster={src}
+        autoplay
+        loop
+        muted
+        playsinline
+        preload="metadata"
+      >
+        <source src={video} type="video/mp4" />
+      </video>
+    ) : src ? (
       <img class="device-screen" src={src} alt={alt} />
     ) : (
       <div class="device-screen flex items-center justify-center bg-gradient-to-b from-[#161616] to-black">
@@ -20,3 +37,29 @@ const { src, alt = "Inkprep app screen" } = Astro.props;
   <div class="device-power"></div>
   <div class="device-home"></div>
 </div>
+
+<style>
+  .device-video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
+<script>
+  // Honor prefers-reduced-motion: pause looping mock videos and show the poster.
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const apply = () => {
+    document.querySelectorAll<HTMLVideoElement>(".device-video").forEach((v) => {
+      if (reduce.matches) {
+        v.removeAttribute("autoplay");
+        v.pause();
+        v.currentTime = 0;
+      } else {
+        v.play().catch(() => {});
+      }
+    });
+  };
+  apply();
+  reduce.addEventListener("change", apply);
+</script>

@@ -59,12 +59,14 @@ const en: Content = {
     caption: "6 brands · 1100+ pots catalogued",
   },
   input: {
-    label: "GOOD TO KNOW",
-    heading: "Designed for clean digital designs",
-    body: "Inkprep works with clean, color digital designs you created, not camera photos or pictures of finished tattoos.",
-    disclaimerTitle: "About accuracy",
-    disclaimer:
-      "Recommendations are a professional guide based on color references. The final result on skin depends on the ink, the technique, the client's skin and the lighting.",
+    cleanEmoji: "🎨",
+    cleanTitle: "Feed it your digital art",
+    cleanBody:
+      "Drop in the clean, color design you drew. Not camera photos, not pictures of finished tattoos. A sharp file in, real inks out.",
+    accuracyEmoji: "🎯",
+    accuracyTitle: "A guide, not a guarantee",
+    accuracyBody:
+      "Your palette is a professional starting point from color references. What lands on skin still depends on the ink, your technique, the client's skin and the lighting.",
   },
   faq: {
     label: "FAQ",

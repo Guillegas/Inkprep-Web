@@ -7,14 +7,15 @@ const c = getContent(lang);
 ---
 <section class="px-5 py-20">
   <div class="mx-auto grid max-w-5xl gap-5 md:grid-cols-2">
-    <GlassCard class="reveal p-7">
-      <span class="text-xs font-semibold tracking-[0.25em] text-white/60">{c.input.label}</span>
-      <h2 class="mt-4 font-display text-2xl font-bold">{c.input.heading}</h2>
-      <p class="mt-3 text-white/60">{c.input.body}</p>
+    <GlassCard class="reveal flex flex-col p-8">
+      <span class="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-3xl" role="img" aria-label={c.input.cleanTitle}>{c.input.cleanEmoji}</span>
+      <h2 class="mt-6 font-display text-2xl font-bold leading-tight">{c.input.cleanTitle}</h2>
+      <p class="mt-3 text-white/60">{c.input.cleanBody}</p>
     </GlassCard>
-    <GlassCard class="reveal p-7">
-      <h3 class="text-lg font-semibold text-white/90">{c.input.disclaimerTitle}</h3>
-      <p class="mt-3 text-white/60">{c.input.disclaimer}</p>
+    <GlassCard class="reveal flex flex-col p-8">
+      <span class="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-3xl" role="img" aria-label={c.input.accuracyTitle}>{c.input.accuracyEmoji}</span>
+      <h2 class="mt-6 font-display text-2xl font-bold leading-tight">{c.input.accuracyTitle}</h2>
+      <p class="mt-3 text-white/60">{c.input.accuracyBody}</p>
     </GlassCard>
   </div>
 </section>

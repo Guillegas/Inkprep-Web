@@ -59,12 +59,14 @@ const es: Content = {
     caption: "6 marcas · +1100 botes catalogados",
   },
   input: {
-    label: "BUENO SABERLO",
-    heading: "Pensado para diseños digitales limpios",
-    body: "Inkprep funciona con diseños digitales a color, limpios y creados por ti, no con fotos de cámara ni fotos de tatuajes terminados.",
-    disclaimerTitle: "Sobre la precisión",
-    disclaimer:
-      "Las recomendaciones son una guía profesional basada en referencias de color. El resultado final sobre la piel depende de la tinta, la técnica, la piel del cliente y la iluminación.",
+    cleanEmoji: "🎨",
+    cleanTitle: "Dale tu arte digital",
+    cleanBody:
+      "Sube el diseño a color y limpio que dibujaste. No fotos de cámara ni de tatuajes terminados. Archivo nítido entra, tintas reales salen.",
+    accuracyEmoji: "🎯",
+    accuracyTitle: "Una guía, no una garantía",
+    accuracyBody:
+      "Tu paleta es un punto de partida profesional basado en referencias de color. Lo que queda en la piel depende de la tinta, tu técnica, la piel del cliente y la iluminación.",
   },
   faq: {
     label: "PREGUNTAS",
