@@ -18,14 +18,15 @@ import { SUPPORT_EMAIL, LEGAL_ENTITY } from "../../config";
     <li><strong>Diseños que subes:</strong> las imágenes de diseño digital que añades a un proyecto para recibir recomendaciones de tinta.</li>
     <li><strong>Datos de uso y proyectos:</strong> los proyectos que creas, tus paletas guardadas, favoritos y preferencias dentro de la app.</li>
     <li><strong>Datos de suscripción:</strong> tu estado de suscripción e identificadores de compra, gestionados a través de las tiendas de apps y RevenueCat. Nunca recibimos ni almacenamos los datos completos de tu tarjeta de pago.</li>
-    <li><strong>Analítica web:</strong> si lo consientes, estadísticas de uso anónimas y agregadas (ver "Cookies y analítica" más abajo).</li>
+    <li><strong>Analítica dentro de la app:</strong> eventos de uso (como pantallas vistas y funciones utilizadas) asociados a un identificador anónimo, recogidos a través de PostHog para entender cómo se usa la app.</li>
+    <li><strong>Analítica web:</strong> si lo consientes, estadísticas de uso anónimas y agregadas (ver "Analítica" más abajo).</li>
   </ul>
 
   <h2>2. Para qué los usamos y base legal</h2>
   <ul>
     <li><strong>Para prestar el servicio</strong> (analizar tus diseños, devolver recomendaciones de tinta, guardar tus proyectos): ejecución de un contrato.</li>
     <li><strong>Para gestionar tu cuenta y suscripción</strong>: ejecución de un contrato.</li>
-    <li><strong>Para mejorar y proteger el servicio</strong>: interés legítimo.</li>
+    <li><strong>Para mejorar y proteger el servicio</strong> (incluida la analítica dentro de la app): interés legítimo.</li>
     <li><strong>Analítica web</strong>: tu consentimiento.</li>
   </ul>
 
@@ -34,6 +35,7 @@ import { SUPPORT_EMAIL, LEGAL_ENTITY } from "../../config";
   <ul>
     <li><strong>Supabase</strong>: autenticación, base de datos y almacenamiento de las imágenes de diseño subidas.</li>
     <li><strong>RevenueCat</strong>: gestión de suscripciones.</li>
+    <li><strong>PostHog</strong>: analítica de producto dentro de la app.</li>
     <li><strong>Apple / Google</strong>: inicio de sesión y procesamiento de pagos a través de sus tiendas.</li>
   </ul>
   <p><strong>No</strong> vendemos tus datos personales.</p>
@@ -66,7 +68,14 @@ import { SUPPORT_EMAIL, LEGAL_ENTITY } from "../../config";
   <h2>7. Menores</h2>
   <p>Inkprep es una herramienta profesional dirigida a adultos y no está orientada a menores.</p>
 
-  <h2>8. Cookies y analítica</h2>
+  <h2>8. Analítica</h2>
+  <p>
+    Dentro de la app usamos <strong>PostHog</strong>, un proveedor externo de analítica de
+    producto, para recoger eventos de uso (por ejemplo, qué pantallas abres y qué funciones
+    utilizas) asociados a un identificador anónimo. Lo usamos únicamente para entender cómo
+    se usa Inkprep y mejorarlo. <strong>No</strong> vendemos estos datos ni los usamos para
+    publicidad ni para rastreo entre apps.
+  </p>
   <p>
     Esta web usa analítica solo después de que la aceptes en el banner de consentimiento.
     Si la rechazas, no se carga ninguna analítica ni rastreo. Puedes cambiar tu elección
