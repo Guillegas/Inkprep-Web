@@ -14,7 +14,7 @@ const es: Content = {
     download: "Descargar",
   },
   hero: {
-    heading: "Sabe exactamente qué tintas usar antes de empezar a",
+    heading: "Las tintas exactas para tu diseño, listas antes de",
     headingEm: "tatuar",
   },
   showcase: {
