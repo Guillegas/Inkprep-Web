@@ -1,0 +1,13 @@
+---
+import { getContent, type Lang } from "../i18n";
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const c = getContent(lang);
+---
+<section class="px-5 py-20">
+  <div class="reveal mx-auto max-w-3xl text-center">
+    <span class="text-xs font-semibold tracking-[0.25em] text-white/40">{c.problem.label}</span>
+    <h2 class="mt-4 font-[var(--font-display)] text-3xl font-bold sm:text-4xl">{c.problem.heading}</h2>
+    <p class="mt-5 text-lg leading-relaxed text-white/60">{c.problem.body}</p>
+  </div>
+</section>
