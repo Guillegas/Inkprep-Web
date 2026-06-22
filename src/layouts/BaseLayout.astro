@@ -37,8 +37,9 @@ const esHref = `${SITE_URL}/es${path === "/" ? "/" : path}`;
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
     <meta name="twitter:card" content="summary_large_image" />
+    <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
   </head>
-  <body class="font-[var(--font-body)] relative min-h-screen">
+  <body class="font-body relative min-h-screen">
     <slot />
     <script>
       const els = document.querySelectorAll(".reveal");

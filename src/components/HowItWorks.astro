@@ -8,13 +8,13 @@ const c = getContent(lang);
 <section id="how" class="px-5 py-20">
   <div class="mx-auto max-w-6xl">
     <div class="reveal mx-auto max-w-2xl text-center">
-      <span class="text-xs font-semibold tracking-[0.25em] text-white/40">{c.how.label}</span>
-      <h2 class="mt-4 font-[var(--font-display)] text-3xl font-bold sm:text-4xl">{c.how.heading}</h2>
+      <span class="text-xs font-semibold tracking-[0.25em] text-white/60">{c.how.label}</span>
+      <h2 class="mt-4 font-display text-3xl font-bold sm:text-4xl">{c.how.heading}</h2>
     </div>
     <div class="mt-12 grid gap-5 md:grid-cols-3">
       {c.how.steps.map((step, i) => (
         <GlassCard class="reveal p-7">
-          <span class="font-[var(--font-display)] text-4xl font-extrabold text-[var(--color-ink-crimson)]">{String(i + 1).padStart(2, "0")}</span>
+          <span class="font-display text-4xl font-extrabold text-[var(--color-ink-crimson)]">{String(i + 1).padStart(2, "0")}</span>
           <h3 class="mt-4 text-xl font-semibold">{step.title}</h3>
           <p class="mt-2 text-white/60">{step.body}</p>
         </GlassCard>

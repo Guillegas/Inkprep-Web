@@ -14,20 +14,20 @@ const c = getContent(lang);
   <div class="mx-auto grid max-w-6xl items-center gap-14 md:grid-cols-2">
     <div class="reveal">
       <span class="text-xs font-semibold tracking-[0.25em] text-[var(--color-ink-crimson)]">{c.hero.eyebrow}</span>
-      <h1 class="mt-4 font-[var(--font-display)] text-4xl font-extrabold leading-[1.1] sm:text-5xl lg:text-6xl">
+      <h1 class="mt-4 font-display text-4xl font-extrabold leading-[1.1] sm:text-5xl lg:text-6xl">
         {c.hero.heading} <em class="not-italic text-[var(--color-ink-crimson)]">{c.hero.headingEm}</em>
       </h1>
       <p class="mt-6 max-w-md text-lg leading-relaxed text-white/60">{c.hero.sub}</p>
       <div class="mt-8 flex flex-col items-start gap-3">
         <AppStoreButton comingSoonLabel={c.comingSoon} />
-        <span class="text-sm text-white/40">{c.hero.note}</span>
+        <span class="text-sm text-white/60">{c.hero.note}</span>
       </div>
     </div>
     <div class="reveal flex justify-center">
       <PhoneMockup>
         <div class="relative flex h-full w-full flex-col items-center justify-center gap-4 bg-gradient-to-b from-[#111] to-black">
           <img src={glassIcon.src} alt="Inkprep app icon" class="h-24 w-24 rounded-3xl" width="96" height="96" />
-          <span class="font-[var(--font-display)] text-2xl font-bold">Inkprep</span>
+          <span class="font-display text-2xl font-bold">Inkprep</span>
         </div>
       </PhoneMockup>
     </div>

@@ -10,18 +10,18 @@ const inks = ["Crimson", "Royal Violet", "Teal", "Amber", "Cobalt", "Rose"];
 <section class="px-5 py-20">
   <div class="mx-auto max-w-6xl">
     <div class="reveal mx-auto max-w-2xl text-center">
-      <span class="text-xs font-semibold tracking-[0.25em] text-white/40">{c.showcase.label}</span>
-      <h2 class="mt-4 font-[var(--font-display)] text-3xl font-bold sm:text-4xl">{c.showcase.heading}</h2>
+      <span class="text-xs font-semibold tracking-[0.25em] text-white/60">{c.showcase.label}</span>
+      <h2 class="mt-4 font-display text-3xl font-bold sm:text-4xl">{c.showcase.heading}</h2>
       <p class="mt-4 text-lg text-white/60">{c.showcase.body}</p>
     </div>
     <GlassCard class="reveal mt-12 p-8">
-      <p class="text-xs font-semibold uppercase tracking-widest text-white/40">{c.showcase.swatchLabel}</p>
+      <p class="text-xs font-semibold uppercase tracking-widest text-white/60">{c.showcase.swatchLabel}</p>
       <div class="mt-4 flex flex-wrap gap-3">
         {swatches.map((s) => (
           <div class="h-12 w-12 rounded-xl border border-white/10" style={`background:${s};`}></div>
         ))}
       </div>
-      <p class="mt-8 text-xs font-semibold uppercase tracking-widest text-white/40">{c.showcase.inkLabel}</p>
+      <p class="mt-8 text-xs font-semibold uppercase tracking-widest text-white/60">{c.showcase.inkLabel}</p>
       <div class="mt-4 flex flex-wrap gap-3">
         {inks.map((ink, i) => (
           <span class="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm">

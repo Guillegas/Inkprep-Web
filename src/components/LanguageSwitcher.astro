@@ -7,7 +7,7 @@ const enHref = norm;
 const esHref = `/es${norm === "/" ? "/" : norm}`;
 const base = "px-2 py-1 text-sm font-medium transition";
 const active = "text-white";
-const idle = "text-white/40 hover:text-white/70";
+const idle = "text-white/60 hover:text-white/70";
 ---
 <div class="flex items-center gap-1">
   <a href={enHref} class={`${base} ${lang === "en" ? active : idle}`}>EN</a>
