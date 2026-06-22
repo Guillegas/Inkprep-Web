@@ -54,4 +54,5 @@ export interface Content {
     rights: string;
   };
   comingSoon: string;
+  consent: { text: string; accept: string; reject: string; privacyLabel: string };
 }

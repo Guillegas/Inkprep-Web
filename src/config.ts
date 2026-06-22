@@ -14,3 +14,9 @@ export const APP_STORE_AVAILABLE = true;
 
 export const PLAY_STORE_URL = "#";
 export const PLAY_STORE_AVAILABLE = false;
+
+// Analytics — loaded ONLY after the user accepts the consent banner.
+// Recommended: Plausible (cookieless, EU-hosted). Leave ANALYTICS_DOMAIN empty
+// to ship the consent banner without yet wiring a provider; set it when ready.
+export const ANALYTICS_DOMAIN = ""; // e.g. "inkprep.app"
+export const ANALYTICS_SRC = "https://plausible.io/js/script.js";

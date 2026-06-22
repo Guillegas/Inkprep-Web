@@ -95,6 +95,12 @@ const es: Content = {
     rights: "Todos los derechos reservados.",
   },
   comingSoon: "Próximamente en la App Store",
+  consent: {
+    text: "Usamos analítica respetuosa con la privacidad para mejorar Inkprep. Puedes aceptar o rechazar.",
+    accept: "Aceptar",
+    reject: "Rechazar",
+    privacyLabel: "Política de Privacidad",
+  },
 };
 
 export default es;
