@@ -49,6 +49,8 @@ direct match. Booth tool consulted before tattooing.
   must never enter this repo.
 
 ## Pending (user-supplied)
+- **App Store submission checklist** (metadata, binary, account deletion, IAP) lives in
+  `docs/app-store-checklist.md` — review before submitting to review.
 - Real app screenshots → replace placeholder screens in `PhoneMockup` / showcase.
 - Finalize legal `[date]` and storage-region details in privacy/terms.
 - `ANALYTICS_DOMAIN` once the Plausible (or other) account exists.
