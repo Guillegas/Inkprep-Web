@@ -1,16 +1,70 @@
 ---
 import LegalLayout from "../../layouts/LegalLayout.astro";
+import { SUPPORT_EMAIL, LEGAL_ENTITY } from "../../config";
 ---
 <LegalLayout lang="es" path="/terms" title="Términos del Servicio">
-  <p>Última actualización: <!-- TODO: fecha al publicar --> [fecha].</p>
-  <h2>1. Aceptación de los términos</h2>
-  <p>Al descargar o usar Inkprep, aceptas estos Términos del Servicio. Si no estás de acuerdo, no uses la app.</p>
-  <h2>2. El servicio</h2>
-  <p>Inkprep analiza imágenes de diseños de tatuaje y sugiere tintas que coinciden. Las recomendaciones son orientativas y no garantizan un resultado concreto sobre la piel.</p>
-  <h2>3. Contenido del usuario</h2>
-  <p>Eres responsable de los diseños que subes y confirmas que tienes derecho a usarlos.</p>
-  <h2>4. Aviso legal</h2>
-  <p>Inkprep no sustituye el criterio de un tatuador profesional. Las decisiones finales de color y aplicación son tuyas y de tu tatuador.</p>
-  <h2>5. Contacto</h2>
-  <p>Dudas sobre estos términos: <!-- TODO: email de contacto --> [email].</p>
+  <p>Última actualización: <strong>[fecha]</strong>.</p>
+  <p>
+    Estos Términos regulan el uso de la app <strong>Tattoo Inkprep</strong> y de esta web,
+    proporcionadas por <strong>{LEGAL_ENTITY}</strong> (España, UE). Al usar Inkprep
+    aceptas estos Términos. Si no estás de acuerdo, no uses el servicio.
+  </p>
+
+  <h2>1. El servicio</h2>
+  <p>
+    Inkprep es una <strong>herramienta de apoyo</strong> profesional para tatuadores a
+    color. Subes un diseño digital limpio e Inkprep sugiere tintas de tatuaje — y mezclas —
+    que coinciden con sus colores, opcionalmente ajustadas al tono de piel del cliente.
+  </p>
+
+  <h2>2. No es asesoramiento ni garantía de resultado</h2>
+  <p>
+    Inkprep ofrece <strong>únicamente sugerencias de referencia de color</strong>. No es
+    asesoramiento médico ni garantiza un resultado concreto del tatuaje. El resultado final
+    sobre la piel depende de la tinta, la técnica, la piel del cliente y la iluminación.
+    Como profesional, eres el único responsable de las tintas que uses y del trabajo que
+    realices.
+  </p>
+
+  <h2>3. Limitación de responsabilidad</h2>
+  <p>
+    En la máxima medida permitida por la ley, {LEGAL_ENTITY} no se responsabiliza del
+    resultado de un tatuaje, de las decisiones tomadas a partir de las sugerencias de la
+    app, ni de daños indirectos o consecuentes derivados del uso del servicio. Las
+    recomendaciones son una guía y siempre prevalece el criterio profesional.
+  </p>
+
+  <h2>4. Tus diseños y propiedad intelectual</h2>
+  <p>
+    Los diseños que subes siguen siendo <strong>tuyos</strong>. Solo nos concedes una
+    licencia limitada para procesarlos y almacenarlos en la medida necesaria para prestarte
+    el servicio (p.ej. analizar colores y guardar tus proyectos). Confirmas que tienes
+    derecho a usar cualquier diseño que subas.
+  </p>
+
+  <h2>5. Uso aceptable</h2>
+  <p>
+    Te comprometes a no hacer un mal uso del servicio, a no intentar interrumpirlo y a no
+    subir contenido que no tengas derecho a usar. Podemos suspender o cancelar cuentas que
+    incumplan estos Términos.
+  </p>
+
+  <h2>6. Suscripciones</h2>
+  <p>
+    Inkprep se ofrece como suscripción a través de las tiendas de apps. Las suscripciones
+    se <strong>renuevan automáticamente</strong> salvo cancelación. Puedes gestionar o
+    cancelar tu suscripción en cualquier momento desde los ajustes de tu cuenta de la App
+    Store. Los reembolsos los gestiona Apple (o Google) según sus políticas aplicables. El
+    precio y cualquier prueba se muestran en la tienda en el momento de la compra.
+  </p>
+
+  <h2>7. Cambios y finalización</h2>
+  <p>
+    Podemos actualizar el servicio o estos Términos; el uso continuado implica que aceptas
+    los Términos actualizados. Puedes dejar de usar el servicio y eliminar tu cuenta en
+    cualquier momento.
+  </p>
+
+  <h2>8. Contacto</h2>
+  <p>Dudas sobre estos Términos: <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.</p>
 </LegalLayout>

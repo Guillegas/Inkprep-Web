@@ -1,0 +1,36 @@
+---
+import LegalLayout from "../layouts/LegalLayout.astro";
+import { SUPPORT_EMAIL } from "../config";
+---
+<LegalLayout lang="en" path="/support" title="Support">
+  <p>
+    Need help with Inkprep? We're happy to assist. Email us at
+    <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a> and we'll get back to you.
+  </p>
+
+  <h2>Before you write</h2>
+  <p>To help us answer faster, please include:</p>
+  <ul>
+    <li>Your device and iOS version.</li>
+    <li>A short description of what happened and what you expected.</li>
+    <li>If relevant, the ink brand(s) and the kind of design you were analyzing.</li>
+  </ul>
+
+  <h2>Manage your subscription</h2>
+  <p>
+    You can view, change or cancel your subscription anytime from your App Store account
+    settings on your iPhone.
+  </p>
+
+  <h2>Delete your account and data</h2>
+  <p>
+    You can delete your account and associated data directly from the app, in Settings.
+    This removes your projects and uploaded designs. If you need help, email us at
+    <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
+  </p>
+
+  <h2>Legal</h2>
+  <p>
+    See our <a href="/privacy">Privacy Policy</a> and <a href="/terms">Terms of Service</a>.
+  </p>
+</LegalLayout>

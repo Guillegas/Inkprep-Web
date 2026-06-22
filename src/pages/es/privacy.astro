@@ -1,16 +1,80 @@
 ---
 import LegalLayout from "../../layouts/LegalLayout.astro";
+import { SUPPORT_EMAIL, LEGAL_ENTITY } from "../../config";
 ---
 <LegalLayout lang="es" path="/privacy" title="Política de Privacidad">
-  <p>Última actualización: <!-- TODO: fecha al publicar --> [fecha].</p>
-  <h2>1. Datos que tratamos</h2>
-  <p>Inkprep procesa las imágenes de diseños de tatuaje que elijas analizar para extraer colores y sugerir tintas.</p>
-  <h2>2. Uso de las imágenes</h2>
-  <p>Las imágenes se usan únicamente para ofrecer la función de análisis de color. <!-- TODO: confirmar política de retención con la app --> [describir retención].</p>
-  <h2>3. Terceros</h2>
-  <p>No vendemos tus datos personales. <!-- TODO: listar analítica/procesadores usados --></p>
-  <h2>4. Tus derechos</h2>
-  <p>Puedes solicitar información sobre tus datos o su eliminación contactando con nosotros.</p>
-  <h2>5. Contacto</h2>
-  <p>Dudas de privacidad: <!-- TODO: email de contacto --> [email].</p>
+  <p>Última actualización: <strong>[fecha]</strong>.</p>
+  <p>
+    Esta Política de Privacidad explica cómo <strong>Tattoo Inkprep</strong> ("Inkprep",
+    "nosotros") trata los datos personales cuando usas nuestra app móvil y esta web. El
+    responsable del tratamiento es <strong>{LEGAL_ENTITY}</strong> (España, UE). Para
+    cualquier solicitud de privacidad, escribe a
+    <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
+  </p>
+
+  <h2>1. Datos que recogemos</h2>
+  <ul>
+    <li><strong>Datos de cuenta:</strong> al iniciar sesión con Google o Apple, recibimos tu correo electrónico y un identificador básico de cuenta.</li>
+    <li><strong>Diseños que subes:</strong> las imágenes de diseño digital que añades a un proyecto para recibir recomendaciones de tinta.</li>
+    <li><strong>Datos de uso y proyectos:</strong> los proyectos que creas, tus paletas guardadas, favoritos y preferencias dentro de la app.</li>
+    <li><strong>Datos de suscripción:</strong> tu estado de suscripción e identificadores de compra, gestionados a través de las tiendas de apps y RevenueCat. Nunca recibimos ni almacenamos los datos completos de tu tarjeta de pago.</li>
+    <li><strong>Analítica web:</strong> si lo consientes, estadísticas de uso anónimas y agregadas (ver "Cookies y analítica" más abajo).</li>
+  </ul>
+
+  <h2>2. Para qué los usamos y base legal</h2>
+  <ul>
+    <li><strong>Para prestar el servicio</strong> (analizar tus diseños, devolver recomendaciones de tinta, guardar tus proyectos) — ejecución de un contrato.</li>
+    <li><strong>Para gestionar tu cuenta y suscripción</strong> — ejecución de un contrato.</li>
+    <li><strong>Para mejorar y proteger el servicio</strong> — interés legítimo.</li>
+    <li><strong>Analítica web</strong> — tu consentimiento.</li>
+  </ul>
+
+  <h2>3. Encargados y terceros</h2>
+  <p>Contamos con los siguientes proveedores, que tratan datos por cuenta nuestra bajo contratos de encargo de tratamiento:</p>
+  <ul>
+    <li><strong>Supabase</strong> — autenticación, base de datos y almacenamiento de las imágenes de diseño subidas.</li>
+    <li><strong>RevenueCat</strong> — gestión de suscripciones.</li>
+    <li><strong>Apple / Google</strong> — inicio de sesión y procesamiento de pagos a través de sus tiendas.</li>
+  </ul>
+  <p><strong>No</strong> vendemos tus datos personales.</p>
+
+  <h2>4. Dónde se almacenan tus datos</h2>
+  <p>
+    Tus datos de cuenta, datos de proyectos y diseños subidos se almacenan en la
+    infraestructura de nuestros proveedores. Cuando hay transferencias fuera de la UE/EEE,
+    se protegen con garantías adecuadas (como las Cláusulas Contractuales Tipo de la UE).
+    <strong>[Confirmar región/detalles de almacenamiento]</strong>.
+  </p>
+
+  <h2>5. Conservación</h2>
+  <p>
+    Conservamos tu cuenta, proyectos y diseños mientras tu cuenta esté activa. Cuando
+    eliminas tu cuenta (disponible en la app), tus datos personales y los diseños subidos
+    se eliminan, salvo los registros limitados que debamos conservar para cumplir
+    obligaciones legales.
+  </p>
+
+  <h2>6. Tus derechos</h2>
+  <p>
+    Conforme al RGPD, tienes derecho a acceder, rectificar, suprimir, limitar y portar tus
+    datos, y a oponerte a ciertos tratamientos. Puedes eliminar tu cuenta y los datos
+    asociados directamente desde la app, o contactándonos. También tienes derecho a
+    presentar una reclamación ante tu autoridad de control (en España, la AEPD).
+  </p>
+
+  <h2>7. Menores</h2>
+  <p>Inkprep es una herramienta profesional dirigida a adultos y no está orientada a menores.</p>
+
+  <h2>8. Cookies y analítica</h2>
+  <p>
+    Esta web usa analítica solo después de que la aceptes en el banner de consentimiento.
+    Si la rechazas, no se carga ninguna analítica ni rastreo. Puedes cambiar tu elección
+    en cualquier momento desde el banner.
+  </p>
+
+  <h2>9. Cambios</h2>
+  <p>Podemos actualizar esta política; la fecha de "última actualización" refleja la versión vigente.</p>
+
+  <h2>10. Contacto</h2>
+  <p>Responsable del tratamiento: <strong>{LEGAL_ENTITY}</strong>. Email: <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.</p>
 </LegalLayout>

@@ -1,0 +1,37 @@
+---
+import LegalLayout from "../../layouts/LegalLayout.astro";
+import { SUPPORT_EMAIL } from "../../config";
+---
+<LegalLayout lang="es" path="/support" title="Soporte">
+  <p>
+    ¿Necesitas ayuda con Inkprep? Estaremos encantados de ayudarte. Escríbenos a
+    <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a> y te responderemos.
+  </p>
+
+  <h2>Antes de escribir</h2>
+  <p>Para responderte más rápido, incluye por favor:</p>
+  <ul>
+    <li>Tu dispositivo y versión de iOS.</li>
+    <li>Una breve descripción de qué ha pasado y qué esperabas.</li>
+    <li>Si es relevante, la/s marca/s de tinta y el tipo de diseño que analizabas.</li>
+  </ul>
+
+  <h2>Gestionar tu suscripción</h2>
+  <p>
+    Puedes ver, cambiar o cancelar tu suscripción cuando quieras desde los ajustes de tu
+    cuenta de la App Store en tu iPhone.
+  </p>
+
+  <h2>Eliminar tu cuenta y datos</h2>
+  <p>
+    Puedes eliminar tu cuenta y los datos asociados directamente desde la app, en Ajustes.
+    Esto elimina tus proyectos y los diseños subidos. Si necesitas ayuda, escríbenos a
+    <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
+  </p>
+
+  <h2>Legal</h2>
+  <p>
+    Consulta nuestra <a href="/es/privacy">Política de Privacidad</a> y los
+    <a href="/es/terms">Términos del Servicio</a>.
+  </p>
+</LegalLayout>

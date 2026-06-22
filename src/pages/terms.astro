@@ -1,16 +1,68 @@
 ---
 import LegalLayout from "../layouts/LegalLayout.astro";
+import { SUPPORT_EMAIL, LEGAL_ENTITY } from "../config";
 ---
 <LegalLayout lang="en" path="/terms" title="Terms of Service">
-  <p>Last updated: <!-- TODO: set date at publish --> [date].</p>
-  <h2>1. Acceptance of Terms</h2>
-  <p>By downloading or using Inkprep, you agree to these Terms of Service. If you do not agree, do not use the app.</p>
-  <h2>2. The Service</h2>
-  <p>Inkprep analyzes tattoo design images and suggests matching tattoo inks. Recommendations are guidance only and do not guarantee a specific result on skin.</p>
-  <h2>3. User Content</h2>
-  <p>You are responsible for the designs you upload and confirm you have the right to use them.</p>
-  <h2>4. Disclaimer</h2>
-  <p>Inkprep does not replace the judgment of a professional tattoo artist. Final color and application decisions rest with you and your artist.</p>
-  <h2>5. Contact</h2>
-  <p>Questions about these terms: <!-- TODO: contact email --> [email].</p>
+  <p>Last updated: <strong>[date]</strong>.</p>
+  <p>
+    These Terms govern your use of the <strong>Tattoo Inkprep</strong> app and this
+    website, provided by <strong>{LEGAL_ENTITY}</strong> (Spain, EU). By using Inkprep you
+    agree to these Terms. If you do not agree, do not use the service.
+  </p>
+
+  <h2>1. The service</h2>
+  <p>
+    Inkprep is a professional <strong>support tool</strong> for color tattoo artists. You
+    upload a clean digital design and Inkprep suggests tattoo inks — and ink mixes — that
+    match its colors, optionally adjusted to a client's skin tone.
+  </p>
+
+  <h2>2. Not advice, no guarantee of result</h2>
+  <p>
+    Inkprep provides <strong>color reference suggestions only</strong>. It is not medical
+    advice and does not guarantee any specific tattoo outcome. The final result on skin
+    depends on the ink, the technique, the client's skin and the lighting. As a
+    professional, you remain solely responsible for the inks you use and the work you
+    perform.
+  </p>
+
+  <h2>3. Limitation of liability</h2>
+  <p>
+    To the maximum extent permitted by law, {LEGAL_ENTITY} is not liable for any outcome
+    of a tattoo, for decisions made based on the app's suggestions, or for indirect or
+    consequential damages arising from use of the service. The recommendations are a guide,
+    and professional judgment always prevails.
+  </p>
+
+  <h2>4. Your designs and intellectual property</h2>
+  <p>
+    The designs you upload remain <strong>yours</strong>. You grant us only a limited
+    license to process and store them as needed to provide the service to you (e.g. to
+    analyze colors and save your projects). You confirm you have the right to use any
+    design you upload.
+  </p>
+
+  <h2>5. Acceptable use</h2>
+  <p>
+    You agree not to misuse the service, attempt to disrupt it, or upload content you have
+    no right to use. We may suspend or terminate accounts that breach these Terms.
+  </p>
+
+  <h2>6. Subscriptions</h2>
+  <p>
+    Inkprep is offered as a subscription through the app stores. Subscriptions
+    <strong>renew automatically</strong> unless cancelled. You can manage or cancel your
+    subscription at any time from your App Store account settings. Refunds are handled by
+    Apple (or Google) under their applicable policies. Pricing and any trial are shown in
+    the store at the moment of purchase.
+  </p>
+
+  <h2>7. Changes &amp; termination</h2>
+  <p>
+    We may update the service or these Terms; continued use means you accept the updated
+    Terms. You may stop using the service and delete your account at any time.
+  </p>
+
+  <h2>8. Contact</h2>
+  <p>Questions about these Terms: <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.</p>
 </LegalLayout>
