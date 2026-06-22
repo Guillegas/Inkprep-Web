@@ -24,8 +24,12 @@ const en: Content = {
   },
   problem: {
     label: "WHY INKPREP",
-    heading: "Stop choosing colors by eye",
-    body: "Picking inks from memory and color cards is slow and uncertain. Inkprep gives you fast, reliable recommendations you can trust before you set up your table.",
+    heading: "Eyeballing colors is costly",
+    points: [
+      "Time wasted picking the palette by hand.",
+      "Colors shift depending on skin tone.",
+      "Ink wasted on test mixes.",
+    ],
   },
   how: {
     label: "HOW IT WORKS",

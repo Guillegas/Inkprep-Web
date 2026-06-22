@@ -24,8 +24,12 @@ const es: Content = {
   },
   problem: {
     label: "POR QUÉ INKPREP",
-    heading: "Deja de elegir los colores a ojo",
-    body: "Elegir tintas de memoria y con cartas de color es lento e incierto. Inkprep te da recomendaciones rápidas y fiables en las que confiar antes de montar la mesa.",
+    heading: "Calcular los colores a ojo sale caro",
+    points: [
+      "Tiempo perdido eligiendo la paleta a mano.",
+      "Los colores cambian según el tono de piel.",
+      "Tinta desperdiciada en mezclas de prueba.",
+    ],
   },
   how: {
     label: "CÓMO FUNCIONA",

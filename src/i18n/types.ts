@@ -26,7 +26,7 @@ export interface Content {
     heading: string;
     body: string;
   };
-  problem: { label: string; heading: string; body: string };
+  problem: { label: string; heading: string; points: string[] };
   how: { label: string; heading: string; steps: Step[] };
   features: { label: string; heading: string; items: Feature[] };
   brands: { label: string; heading: string; caption: string };
