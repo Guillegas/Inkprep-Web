@@ -1,0 +1,28 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Hero from "../../components/Hero.astro";
+import Problem from "../../components/Problem.astro";
+import HowItWorks from "../../components/HowItWorks.astro";
+import Features from "../../components/Features.astro";
+import PaletteShowcase from "../../components/PaletteShowcase.astro";
+import Faq from "../../components/Faq.astro";
+import CtaDownload from "../../components/CtaDownload.astro";
+import Footer from "../../components/Footer.astro";
+import { getContent } from "../../i18n";
+const lang = "es" as const;
+const c = getContent(lang);
+---
+<BaseLayout title={c.meta.title} description={c.meta.description} lang={lang} path="/">
+  <Navbar lang={lang} path="/" />
+  <main>
+    <Hero lang={lang} />
+    <Problem lang={lang} />
+    <HowItWorks lang={lang} />
+    <Features lang={lang} />
+    <PaletteShowcase lang={lang} />
+    <Faq lang={lang} />
+    <CtaDownload lang={lang} />
+  </main>
+  <Footer lang={lang} path="/" />
+</BaseLayout>
