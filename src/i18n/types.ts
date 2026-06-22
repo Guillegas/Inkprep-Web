@@ -25,10 +25,6 @@ export interface Content {
     label: string;
     heading: string;
     body: string;
-    designLabel: string;
-    paletteLabel: string;
-    mixLabel: string;
-    mixNote: string;
   };
   problem: { label: string; heading: string; body: string };
   how: { label: string; heading: string; steps: Step[] };

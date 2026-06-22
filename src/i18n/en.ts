@@ -2,9 +2,9 @@ import type { Content } from "./types";
 
 const en: Content = {
   meta: {
-    title: "Inkprep — Know exactly which inks to use before you tattoo",
+    title: "Inkprep: Know exactly which inks to use before you tattoo",
     description:
-      "Inkprep is the iOS app for color tattoo artists: upload a clean design and get the exact inks and mixes to use, adjusted to your client's skin tone.",
+      "Inkprep is the iOS app for color tattoo artists: upload a clean design and get the exact inks to use, adjusted to your client's skin tone.",
   },
   nav: {
     how: "How it works",
@@ -20,16 +20,12 @@ const en: Content = {
   showcase: {
     label: "SEE THE RESULTS",
     heading: "Your design, turned into a ready-to-use palette",
-    body: "Upload a clean color design and Inkprep gives you the exact inks to use — and the mixes when you need them.",
-    designLabel: "Your design",
-    paletteLabel: "Recommended pots",
-    mixLabel: "Suggested mix",
-    mixNote: "When there's no direct match, get a 2-ink mix with the exact ratio.",
+    body: "Upload a clean color design and Inkprep gives you the exact inks to use for every color.",
   },
   problem: {
     label: "WHY INKPREP",
     heading: "Stop choosing colors by eye",
-    body: "Picking inks and mixes from memory and color cards is slow and uncertain. Inkprep gives you fast, reliable recommendations you can trust before you set up your table.",
+    body: "Picking inks from memory and color cards is slow and uncertain. Inkprep gives you fast, reliable recommendations you can trust before you set up your table.",
   },
   how: {
     label: "HOW IT WORKS",
@@ -38,7 +34,7 @@ const en: Content = {
       { title: "Upload your design", body: "Create a project and add a clean color design you made (PNG, JPG or WEBP)." },
       { title: "Choose your ink brands", body: "Tell Inkprep which brands you work with." },
       { title: "Set the client's skin tone", body: "Pick the skin tone so the palette fits the real result." },
-      { title: "Get your palette", body: "Receive the exact pots to use — plus 2-ink mixes with ratios when needed. Every project is saved to your history." },
+      { title: "Get your palette", body: "Receive the exact pots to use for every color. Every project is saved to your history." },
     ],
   },
   features: {
@@ -46,7 +42,7 @@ const en: Content = {
     heading: "Everything you need before the needle",
     items: [
       { title: "Exact ink recommendations", body: "Get the real pots that match each color in your design.", glow: "var(--color-ink-crimson)" },
-      { title: "Smart 2-ink mixes", body: "When there's no direct match, get a mix of two inks with the exact ratio.", glow: "var(--color-ink-violet)" },
+      { title: "Fast and consistent", body: "Get a clear palette in seconds, the same way every time.", glow: "var(--color-ink-violet)" },
       { title: "Skin-tone aware", body: "Recommendations adjusted to your client's skin tone.", glow: "var(--color-ink-teal)" },
       { title: "Explore the ink catalog", body: "Browse 1100+ pots and filter by brand, color group or search.", glow: "var(--color-ink-amber)" },
       { title: "Color loupe", body: "Tap any color to inspect it in detail.", glow: "var(--color-ink-blue)" },
@@ -63,7 +59,7 @@ const en: Content = {
   input: {
     label: "GOOD TO KNOW",
     heading: "Designed for clean digital designs",
-    body: "Inkprep works with clean, color digital designs you created — not camera photos or pictures of finished tattoos.",
+    body: "Inkprep works with clean, color digital designs you created, not camera photos or pictures of finished tattoos.",
     disclaimerTitle: "About accuracy",
     disclaimer:
       "Recommendations are a professional guide based on color references. The final result on skin depends on the ink, the technique, the client's skin and the lighting.",
@@ -72,10 +68,10 @@ const en: Content = {
     label: "FAQ",
     heading: "Questions, answered",
     items: [
-      { q: "Does it work with photos of tattoos?", a: "No. Inkprep is for clean, color digital designs you made — not camera photos or finished-tattoo pictures." },
+      { q: "Does it work with photos of tattoos?", a: "No. Inkprep is for clean, color digital designs you made, not camera photos or finished-tattoo pictures." },
       { q: "Is it only for color tattoos?", a: "Yes. Inkprep is built for color work." },
       { q: "Which platforms is it on?", a: "Inkprep is on iPhone now. Android is coming later." },
-      { q: "Which ink brands are supported?", a: "Eternal Ink, Intenze, Dermaglo, World Famous, Radiant and Solid Ink — 1100+ pots." },
+      { q: "Which ink brands are supported?", a: "Eternal Ink, Intenze, Dermaglo, World Famous, Radiant and Solid Ink, with 1100+ pots." },
       { q: "How accurate are the recommendations?", a: "They're a reliable professional guide. The real result also depends on ink, technique, skin and lighting." },
       { q: "How do I manage my subscription?", a: "Manage or cancel your subscription anytime from your App Store account." },
     ],
