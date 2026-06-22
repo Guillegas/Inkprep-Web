@@ -7,7 +7,7 @@ const { lang, path } = Astro.props;
 const c = getContent(lang);
 const home = lang === "es" ? "/es/" : "/";
 ---
-<header id="nav" class="fixed inset-x-0 top-0 z-50 transition-colors duration-300">
+<header id="nav" class="nav-bar fixed inset-x-0 top-0 z-50">
   <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
     <a href={home} class="flex items-center gap-2">
       <img src={icon.src} alt="Inkprep" class="h-8 w-8 rounded-lg" width="32" height="32" />
@@ -20,16 +20,49 @@ const home = lang === "es" ? "/es/" : "/";
     </div>
     <div class="flex items-center gap-3">
       <LanguageSwitcher lang={lang} path={path} />
-      <a href="#download" class="hidden rounded-xl bg-white px-4 py-2 text-sm font-semibold text-black transition hover:bg-white/90 sm:inline-block">{c.nav.download}</a>
+      <a href="#download" class="hidden rounded-xl bg-white px-4 py-2 text-sm font-semibold text-black transition hover:bg-white/90 md:inline-block">{c.nav.download}</a>
+      <button
+        id="nav-toggle"
+        type="button"
+        class="flex h-9 w-9 items-center justify-center text-white md:hidden"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <svg class="icon-menu" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        <svg class="icon-close" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+      </button>
     </div>
   </nav>
+  <div id="mobile-menu" class="nav-mobile md:hidden">
+    <a href="#features" class="rounded-lg px-2 py-3 text-base text-white/80 transition hover:text-white">{c.nav.features}</a>
+    <a href="#how" class="rounded-lg px-2 py-3 text-base text-white/80 transition hover:text-white">{c.nav.how}</a>
+    <a href="#faq" class="rounded-lg px-2 py-3 text-base text-white/80 transition hover:text-white">{c.nav.faq}</a>
+    <a href="#download" class="mt-2 rounded-xl bg-white px-4 py-3 text-center font-semibold text-black transition hover:bg-white/90">{c.nav.download}</a>
+  </div>
   <script>
     const nav = document.getElementById("nav");
-    const onScroll = () => {
-      if (window.scrollY > 20) nav?.classList.add("glass");
-      else nav?.classList.remove("glass");
+    const toggle = document.getElementById("nav-toggle");
+    const menu = document.getElementById("mobile-menu");
+    let open = false;
+
+    const setBg = () => {
+      if (open || window.scrollY > 20) nav?.classList.add("is-scrolled");
+      else nav?.classList.remove("is-scrolled");
     };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
+    const setOpen = (next: boolean) => {
+      open = next;
+      menu?.classList.toggle("is-open", open);
+      toggle?.classList.toggle("is-open", open);
+      toggle?.setAttribute("aria-expanded", String(open));
+      setBg();
+    };
+
+    toggle?.addEventListener("click", () => setOpen(!open));
+    menu?.querySelectorAll("a").forEach((a) =>
+      a.addEventListener("click", () => setOpen(false))
+    );
+    window.addEventListener("scroll", setBg, { passive: true });
+    setBg();
   </script>
 </header>

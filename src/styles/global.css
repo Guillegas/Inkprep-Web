@@ -47,6 +47,45 @@ body {
     inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
+/* Navbar — smooth fade to translucent dark on scroll, no border */
+.nav-bar {
+  background-color: transparent;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  transition: background-color 0.5s ease, backdrop-filter 0.5s ease,
+    -webkit-backdrop-filter 0.5s ease;
+}
+.nav-bar.is-scrolled {
+  background-color: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+}
+
+/* Mobile hamburger ↔ close icon toggle */
+#nav-toggle .icon-close {
+  display: none;
+}
+#nav-toggle.is-open .icon-menu {
+  display: none;
+}
+#nav-toggle.is-open .icon-close {
+  display: block;
+}
+
+/* Mobile dropdown menu panel — transparent; inherits the navbar's glass
+   (the header background already covers this area, so adding another layer
+   here would double up and look darker than the navbar). */
+.nav-mobile {
+  display: none;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.25rem 1.25rem 1.5rem;
+  background-color: transparent;
+}
+.nav-mobile.is-open {
+  display: flex;
+}
+
 /* Scroll reveal (JS toggles .is-visible) */
 .reveal {
   opacity: 0;

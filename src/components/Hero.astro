@@ -8,28 +8,22 @@ interface Props { lang: Lang; }
 const { lang } = Astro.props;
 const c = getContent(lang);
 ---
-<section class="relative overflow-hidden px-5 pb-20 pt-36">
-  <Glow color="var(--color-ink-crimson)" class="top-0 right-0 h-[28rem] w-[28rem]" />
-  <Glow color="var(--color-ink-violet)" class="top-40 left-0 h-80 w-80 opacity-25" />
-  <div class="mx-auto grid max-w-6xl items-center gap-14 md:grid-cols-2">
-    <div class="reveal">
-      <span class="text-xs font-semibold tracking-[0.25em] text-[var(--color-ink-crimson)]">{c.hero.eyebrow}</span>
-      <h1 class="mt-4 font-display text-4xl font-extrabold leading-[1.1] sm:text-5xl lg:text-6xl">
-        {c.hero.heading} <em class="not-italic text-[var(--color-ink-crimson)]">{c.hero.headingEm}</em>
-      </h1>
-      <p class="mt-6 max-w-md text-lg leading-relaxed text-white/60">{c.hero.sub}</p>
-      <div class="mt-8 flex flex-col items-start gap-3">
-        <AppStoreButton comingSoonLabel={c.comingSoon} />
-        <span class="text-sm text-white/60">{c.hero.note}</span>
-      </div>
-    </div>
-    <div class="reveal flex justify-center">
+<section class="relative flex min-h-screen items-center overflow-hidden px-5 pb-16 pt-32">
+  <Glow color="var(--color-ink-crimson)" class="left-1/2 top-1/2 h-[34rem] w-[34rem] -translate-x-1/2 -translate-y-1/2 opacity-30" />
+  <div class="reveal mx-auto flex max-w-2xl flex-col items-center text-center">
+    <h1 class="font-display text-4xl font-extrabold leading-[1.1] sm:text-5xl lg:text-6xl">
+      {c.hero.heading} <em class="not-italic text-[var(--color-ink-crimson)]">{c.hero.headingEm}</em>
+    </h1>
+    <div class="mt-12">
       <PhoneMockup>
         <div class="relative flex h-full w-full flex-col items-center justify-center gap-4 bg-gradient-to-b from-[#111] to-black">
           <img src={glassIcon.src} alt="Inkprep app icon" class="h-24 w-24 rounded-3xl" width="96" height="96" />
           <span class="font-display text-2xl font-bold">Inkprep</span>
         </div>
       </PhoneMockup>
+    </div>
+    <div class="mt-10">
+      <AppStoreButton comingSoonLabel={c.comingSoon} />
     </div>
   </div>
 </section>
