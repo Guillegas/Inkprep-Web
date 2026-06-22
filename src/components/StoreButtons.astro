@@ -1,0 +1,21 @@
+---
+import AppStoreButton from "./AppStoreButton.astro";
+import { PLAY_STORE_URL, PLAY_STORE_AVAILABLE } from "../config";
+interface Props { comingSoonLabel: string; class?: string; }
+const { comingSoonLabel, class: className = "" } = Astro.props;
+---
+<div class={`flex flex-wrap items-center justify-center gap-3 ${className}`}>
+  <AppStoreButton comingSoonLabel={comingSoonLabel} />
+  {PLAY_STORE_AVAILABLE && (
+    <a
+      href={PLAY_STORE_URL}
+      class="inline-flex items-center gap-3 rounded-2xl bg-white px-6 py-3.5 font-semibold text-black transition hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(255,255,255,0.15)]"
+    >
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 2.3 13 11.7l2.6-2.6L5.2 1.5A1.5 1.5 0 0 0 3.6 2.3zm-.4 1.4v16.6l8.3-8.3-8.3-8.3zm12.9 9.2L13.7 15l8.1 4.7c.7.4 1.5-.1 1.5-.9 0-.3-.1-.6-.4-.8l-6.8-5.8zm0-2.2 6.8-3.9c.5-.3.6-1 .2-1.4-.2-.2-.6-.3-.9-.1L13.7 9l2 1.9z"/></svg>
+      <span class="flex flex-col leading-tight text-left">
+        <span class="text-[0.65rem] font-medium opacity-70">GET IT ON</span>
+        <span class="text-base font-semibold">Google Play</span>
+      </span>
+    </a>
+  )}
+</div>

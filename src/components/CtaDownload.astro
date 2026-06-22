@@ -1,7 +1,7 @@
 ---
 import { getContent, type Lang } from "../i18n";
 import Glow from "./Glow.astro";
-import AppStoreButton from "./AppStoreButton.astro";
+import StoreButtons from "./StoreButtons.astro";
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
 const c = getContent(lang);
@@ -12,7 +12,7 @@ const c = getContent(lang);
     <h2 class="font-display text-4xl font-extrabold sm:text-5xl">{c.cta.heading}</h2>
     <p class="mt-5 text-lg text-white/60">{c.cta.sub}</p>
     <div class="mt-8 flex justify-center">
-      <AppStoreButton comingSoonLabel={c.comingSoon} />
+      <StoreButtons comingSoonLabel={c.comingSoon} />
     </div>
   </div>
 </section>

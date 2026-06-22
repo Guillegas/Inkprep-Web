@@ -11,7 +11,7 @@ const c = getContent(lang);
       <span class="text-xs font-semibold tracking-[0.25em] text-white/60">{c.how.label}</span>
       <h2 class="mt-4 font-display text-3xl font-bold sm:text-4xl">{c.how.heading}</h2>
     </div>
-    <div class="mt-12 grid gap-5 md:grid-cols-3">
+    <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
       {c.how.steps.map((step, i) => (
         <GlassCard class="reveal p-7">
           <span class="font-display text-4xl font-extrabold text-[var(--color-ink-crimson)]">{String(i + 1).padStart(2, "0")}</span>

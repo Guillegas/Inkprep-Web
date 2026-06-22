@@ -4,8 +4,19 @@ import GlassCard from "./GlassCard.astro";
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
 const c = getContent(lang);
-const swatches = ["#c41e3a", "#7c3aed", "#14b8a6", "#f59e0b", "#3b82f6", "#e11d48"];
-const inks = ["Crimson", "Royal Violet", "Teal", "Amber", "Cobalt", "Rose"];
+
+// Illustrative example output (not real data — visual proof of the result shape).
+const pots = [
+  { hex: "#c0392b", name: "Lipstick Red", brand: "Eternal Ink" },
+  { hex: "#2e86c1", name: "True Blue", brand: "Intenze" },
+  { hex: "#f1c40f", name: "Golden Yellow", brand: "Radiant" },
+];
+const mix = {
+  a: "#27ae60",
+  b: "#145a32",
+  ratio: "70 / 30",
+  result: "#1e8449",
+};
 ---
 <section class="px-5 py-20">
   <div class="mx-auto max-w-6xl">
@@ -14,20 +25,44 @@ const inks = ["Crimson", "Royal Violet", "Teal", "Amber", "Cobalt", "Rose"];
       <h2 class="mt-4 font-display text-3xl font-bold sm:text-4xl">{c.showcase.heading}</h2>
       <p class="mt-4 text-lg text-white/60">{c.showcase.body}</p>
     </div>
-    <GlassCard class="reveal mt-12 p-8">
-      <p class="text-xs font-semibold uppercase tracking-widest text-white/60">{c.showcase.swatchLabel}</p>
-      <div class="mt-4 flex flex-wrap gap-3">
-        {swatches.map((s) => (
-          <div class="h-12 w-12 rounded-xl border border-white/10" style={`background:${s};`}></div>
-        ))}
+
+    <GlassCard class="reveal mt-12 grid gap-8 p-6 sm:p-8 md:grid-cols-2 md:items-center">
+      <!-- Your design -->
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-widest text-white/60">{c.showcase.designLabel}</p>
+        <div class="relative mt-4 aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-[#0c0c0c]">
+          <div class="absolute left-6 top-6 h-24 w-24 rounded-full blur-[6px]" style="background:#c0392b;"></div>
+          <div class="absolute bottom-8 left-16 h-20 w-20 rounded-full blur-[6px]" style="background:#f1c40f;"></div>
+          <div class="absolute right-8 top-12 h-28 w-28 rounded-full blur-[6px]" style="background:#2e86c1;"></div>
+          <div class="absolute bottom-6 right-10 h-16 w-16 rounded-full blur-[6px]" style="background:#1e8449;"></div>
+        </div>
       </div>
-      <p class="mt-8 text-xs font-semibold uppercase tracking-widest text-white/60">{c.showcase.inkLabel}</p>
-      <div class="mt-4 flex flex-wrap gap-3">
-        {inks.map((ink, i) => (
-          <span class="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm">
-            <span class="h-3 w-3 rounded-full" style={`background:${swatches[i]};`}></span>{ink}
-          </span>
-        ))}
+
+      <!-- Result -->
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-widest text-white/60">{c.showcase.paletteLabel}</p>
+        <ul class="mt-4 space-y-2">
+          {pots.map((p) => (
+            <li class="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-3 py-2.5">
+              <span class="h-9 w-9 flex-shrink-0 rounded-lg border border-white/10" style={`background:${p.hex};`}></span>
+              <span class="flex flex-col leading-tight">
+                <span class="text-sm font-semibold">{p.name}</span>
+                <span class="text-xs text-white/55">{p.brand}</span>
+              </span>
+            </li>
+          ))}
+        </ul>
+
+        <p class="mt-6 text-xs font-semibold uppercase tracking-widest text-white/60">{c.showcase.mixLabel}</p>
+        <div class="mt-3 flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-3 py-3">
+          <span class="h-9 w-9 rounded-lg border border-white/10" style={`background:${mix.a};`}></span>
+          <span class="text-white/50">+</span>
+          <span class="h-9 w-9 rounded-lg border border-white/10" style={`background:${mix.b};`}></span>
+          <span class="ml-1 rounded-full bg-white/10 px-2.5 py-1 text-xs font-semibold">{mix.ratio}</span>
+          <span class="text-white/40">→</span>
+          <span class="h-9 w-9 rounded-lg border border-white/10" style={`background:${mix.result};`}></span>
+        </div>
+        <p class="mt-3 text-sm text-white/55">{c.showcase.mixNote}</p>
       </div>
     </GlassCard>
   </div>

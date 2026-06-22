@@ -1,0 +1,37 @@
+---
+import { getContent, type Lang } from "../i18n";
+import eternal from "../assets/brands/eternal.webp";
+import intenze from "../assets/brands/intenze.png";
+import dermaglo from "../assets/brands/dermaglo.png";
+import worldFamous from "../assets/brands/world-famous.png";
+import radiant from "../assets/brands/radiant.png";
+import solid from "../assets/brands/solid.png";
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const c = getContent(lang);
+
+const brands = [
+  { name: "Eternal Ink", logo: eternal },
+  { name: "Intenze", logo: intenze },
+  { name: "Dermaglo", logo: dermaglo },
+  { name: "World Famous", logo: worldFamous },
+  { name: "Radiant", logo: radiant },
+  { name: "Solid Ink", logo: solid },
+];
+---
+<section id="brands" class="px-5 py-20">
+  <div class="mx-auto max-w-6xl">
+    <div class="reveal mx-auto max-w-2xl text-center">
+      <span class="text-xs font-semibold tracking-[0.25em] text-white/60">{c.brands.label}</span>
+      <h2 class="mt-4 font-display text-3xl font-bold sm:text-4xl">{c.brands.heading}</h2>
+      <p class="mt-4 text-white/55">{c.brands.caption}</p>
+    </div>
+    <div class="reveal mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3">
+      {brands.map((b) => (
+        <div class="flex aspect-[16/9] items-center justify-center rounded-2xl bg-white p-6">
+          <img src={b.logo.src} alt={b.name} class="max-h-14 w-auto max-w-[80%] object-contain" loading="lazy" />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

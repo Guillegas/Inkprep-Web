@@ -2,7 +2,7 @@
 import { getContent, type Lang } from "../i18n";
 import Glow from "./Glow.astro";
 import PhoneMockup from "./PhoneMockup.astro";
-import AppStoreButton from "./AppStoreButton.astro";
+import StoreButtons from "./StoreButtons.astro";
 import glassIcon from "../assets/inkprep-icon-glass.png";
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
@@ -23,7 +23,7 @@ const c = getContent(lang);
       </PhoneMockup>
     </div>
     <div class="mt-10">
-      <AppStoreButton comingSoonLabel={c.comingSoon} />
+      <StoreButtons comingSoonLabel={c.comingSoon} />
     </div>
   </div>
 </section>
