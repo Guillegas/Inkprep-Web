@@ -1,24 +1,120 @@
 ---
 import { getContent, type Lang } from "../i18n";
-import GlassCard from "./GlassCard.astro";
+import eternal from "../assets/brands/eternal.webp";
+import intenze from "../assets/brands/intenze.png";
+import dermaglo from "../assets/brands/dermaglo.png";
+import worldFamous from "../assets/brands/world-famous.png";
+import radiant from "../assets/brands/radiant.png";
+import solid from "../assets/brands/solid.png";
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
 const c = getContent(lang);
+const s = c.how.steps;
+
+const brands = [
+  { logo: eternal, mono: false, big: false },
+  { logo: intenze, mono: false, big: false },
+  { logo: dermaglo, mono: false, big: false },
+  { logo: worldFamous, mono: false, big: false },
+  { logo: radiant, mono: true, big: true },
+  { logo: solid, mono: true, big: false },
+];
+// Real inks, one per supported brand.
+const inks = [
+  { name: "Lipstick Red", brand: "Eternal Ink", hex: "#c8102e" },
+  { name: "Bright Yellow", brand: "Intenze", hex: "#f4c20d" },
+  { name: "Brite Red", brand: "Radiant Colors", hex: "#e3372b" },
+  { name: "Lining Black", brand: "World Famous", hex: "#0f0f0f" },
+  { name: "Sky Blue", brand: "Dermaglo", hex: "#3aa0e0" },
+  { name: "Lao Green", brand: "Solid Ink", hex: "#2f8f5b" },
+];
 ---
 <section id="how" class="px-5 py-20">
-  <div class="mx-auto max-w-6xl">
-    <div class="reveal mx-auto max-w-2xl text-center">
+  <div class="mx-auto max-w-xl">
+    <div class="reveal text-center">
       <span class="text-xs font-semibold tracking-[0.25em] text-white/60">{c.how.label}</span>
       <h2 class="mt-4 font-display text-3xl font-bold sm:text-4xl">{c.how.heading}</h2>
     </div>
-    <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-      {c.how.steps.map((step, i) => (
-        <GlassCard class="reveal p-7">
-          <span class="font-display text-4xl font-extrabold text-[var(--color-ink-crimson)]">{String(i + 1).padStart(2, "0")}</span>
-          <h3 class="mt-4 text-xl font-semibold">{step.title}</h3>
-          <p class="mt-2 text-white/60">{step.body}</p>
-        </GlassCard>
-      ))}
+
+    <div class="mt-12 flex flex-col items-center text-center">
+      <!-- Step 1: upload -->
+      <div class="reveal w-full">
+        <h3 class="text-xl font-semibold">{s[0].title}</h3>
+        <p class="mt-2 text-white/60">{s[0].body}</p>
+        <div class="mt-5 text-6xl" role="img" aria-label="Upload design">📤</div>
+      </div>
+
+      <svg class="my-7 h-8 w-8 text-[var(--color-ink-crimson)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+
+      <!-- Step 2: brand carousel -->
+      <div class="reveal w-full">
+        <h3 class="text-xl font-semibold">{s[1].title}</h3>
+        <p class="mt-2 text-white/60">{s[1].body}</p>
+        <div class="relative mt-5 w-full overflow-hidden py-3 [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
+          <div class="marquee-x items-center gap-14">
+            {[...brands, ...brands].map((b) => (
+              <img src={b.logo.src} alt="" class:list={["w-auto flex-shrink-0", b.big ? "h-14" : "h-8", { "brand-mono": b.mono }]} />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <svg class="my-7 h-8 w-8 text-[var(--color-ink-crimson)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+
+      <!-- Step 3: skin tone slider -->
+      <div class="reveal w-full">
+        <h3 class="text-xl font-semibold">{s[2].title}</h3>
+        <p class="mt-2 text-white/60">{s[2].body}</p>
+        <div class="mx-auto mt-5 max-w-xs">
+          <input id="skin-slider" class="skin-slider w-full" type="range" min="0" max="100" value="50" aria-label="Skin tone" />
+        </div>
+      </div>
+
+      <svg class="my-7 h-8 w-8 text-[var(--color-ink-crimson)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+
+      <!-- Step 4: animated ink list -->
+      <div class="reveal w-full">
+        <h3 class="text-xl font-semibold">{s[3].title}</h3>
+        <p class="mt-2 text-white/60">{s[3].body}</p>
+        <div class="relative mx-auto mt-5 h-40 w-full max-w-xs overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)]">
+          <div class="marquee-y space-y-2">
+            {[...inks, ...inks].map((ink) => (
+              <div class="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-left">
+                <span class="h-7 w-7 flex-shrink-0 rounded-lg border border-white/15" style={`background:${ink.hex};`}></span>
+                <span class="flex flex-col leading-tight">
+                  <span class="text-sm font-semibold">{ink.name}</span>
+                  <span class="text-xs text-white/55">{ink.brand}</span>
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
+  <script>
+    const slider = document.getElementById("skin-slider");
+    if (slider instanceof HTMLInputElement) {
+      // Same stops as the slider's gradient track (light -> dark).
+      const stops = [
+        [247, 224, 206],
+        [232, 184, 148],
+        [198, 134, 66],
+        [141, 85, 36],
+        [74, 47, 27],
+      ];
+      const toneAt = (v: number) => {
+        const t = (v / 100) * (stops.length - 1);
+        const i = Math.min(Math.floor(t), stops.length - 2);
+        const f = t - i;
+        const c = stops[i].map((a, k) => Math.round(a + (stops[i + 1][k] - a) * f));
+        return `rgb(${c[0]}, ${c[1]}, ${c[2]})`;
+      };
+      const update = () => slider.style.setProperty("--thumb-color", toneAt(Number(slider.value)));
+      slider.value = "50"; // always start centered
+      update();
+      slider.addEventListener("input", update);
+    }
+  </script>
 </section>

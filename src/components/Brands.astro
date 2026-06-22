@@ -11,12 +11,12 @@ const { lang } = Astro.props;
 const c = getContent(lang);
 
 const brands = [
-  { name: "Eternal Ink", logo: eternal },
-  { name: "Intenze", logo: intenze },
-  { name: "Dermaglo", logo: dermaglo },
-  { name: "World Famous", logo: worldFamous },
-  { name: "Radiant", logo: radiant },
-  { name: "Solid Ink", logo: solid },
+  { name: "Eternal Ink", logo: eternal, mono: false, big: false },
+  { name: "Intenze", logo: intenze, mono: false, big: false },
+  { name: "Dermaglo", logo: dermaglo, mono: false, big: false },
+  { name: "World Famous", logo: worldFamous, mono: false, big: false },
+  { name: "Radiant", logo: radiant, mono: true, big: true },
+  { name: "Solid Ink", logo: solid, mono: true, big: false },
 ];
 ---
 <section id="brands" class="px-5 py-20">
@@ -28,8 +28,8 @@ const brands = [
     </div>
     <div class="reveal mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3">
       {brands.map((b) => (
-        <div class="flex aspect-[16/9] items-center justify-center rounded-2xl bg-white p-6">
-          <img src={b.logo.src} alt={b.name} class="max-h-14 w-auto max-w-[80%] object-contain" loading="lazy" />
+        <div class="flex aspect-[16/9] items-center justify-center p-6">
+          <img src={b.logo.src} alt={b.name} class:list={["w-auto object-contain", b.big ? "max-h-[5.5rem] max-w-[100%]" : "max-h-14 max-w-[80%]", { "brand-mono": b.mono }]} loading="lazy" />
         </div>
       ))}
     </div>

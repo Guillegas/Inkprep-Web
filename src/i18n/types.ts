@@ -6,6 +6,7 @@ export interface Feature {
   title: string;
   body: string;
   glow: string; // CSS color var
+  emoji: string;
 }
 export interface FaqItem {
   q: string;

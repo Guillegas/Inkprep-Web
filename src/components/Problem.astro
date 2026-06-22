@@ -10,7 +10,7 @@ const c = getContent(lang);
       <span class="text-xs font-semibold tracking-[0.25em] text-white/60">{c.problem.label}</span>
       <h2 class="mt-4 font-display text-3xl font-bold sm:text-4xl">{c.problem.heading}</h2>
     </div>
-    <ul class="mt-8 space-y-4">
+    <ul class="mx-auto mt-8 flex w-fit flex-col gap-4 text-left">
       {c.problem.points.map((point) => (
         <li class="flex items-start gap-3">
           <span class="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[var(--color-ink-crimson)] text-sm font-bold text-white" aria-hidden="true">✕</span>

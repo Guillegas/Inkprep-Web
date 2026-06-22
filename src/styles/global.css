@@ -102,3 +102,57 @@ body {
   outline-offset: 2px;
   border-radius: 4px;
 }
+
+/* Horizontal carousel (brand logos) — track holds two copies, loops at -50% */
+@keyframes marquee-x {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-x {
+  display: flex;
+  width: max-content;
+  animation: marquee-x 28s linear infinite;
+}
+
+/* Vertical carousel (ink list) */
+@keyframes marquee-y {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50%); }
+}
+.marquee-y {
+  animation: marquee-y 16s linear infinite;
+}
+
+/* Dark logos that need to read on black */
+.brand-mono {
+  filter: brightness(0) invert(1);
+}
+
+/* Skin-tone slider */
+.skin-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 14px;
+  border-radius: 999px;
+  background: linear-gradient(to right, #f7e0ce, #e8b894, #c68642, #8d5524, #4a2f1b);
+  outline: none;
+}
+.skin-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--thumb-color, #c68642);
+  border: 3px solid #ffffff;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
+}
+.skin-slider::-moz-range-thumb {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--thumb-color, #c68642);
+  border: 3px solid #ffffff;
+  cursor: pointer;
+}

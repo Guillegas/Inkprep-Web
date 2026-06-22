@@ -17,8 +17,8 @@ const c = getContent(lang);
       {c.features.items.map((f) => (
         <GlassCard class="reveal relative overflow-hidden p-7">
           <Glow color={f.glow} class="-top-10 -right-10 h-40 w-40 opacity-30" />
-          <div class="h-10 w-10 rounded-xl" style={`background: ${f.glow};`}></div>
-          <h3 class="mt-5 text-xl font-semibold">{f.title}</h3>
+          <div class="text-4xl" role="img">{f.emoji}</div>
+          <h3 class="mt-4 text-xl font-semibold">{f.title}</h3>
           <p class="mt-2 text-white/60">{f.body}</p>
         </GlassCard>
       ))}
