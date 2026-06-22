@@ -1,0 +1,27 @@
+---
+import { getContent, type Lang } from "../i18n";
+import GlassCard from "./GlassCard.astro";
+import Glow from "./Glow.astro";
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const c = getContent(lang);
+---
+<section id="features" class="relative overflow-hidden px-5 py-20">
+  <Glow color="var(--color-ink-teal)" class="bottom-0 right-10 h-80 w-80 opacity-20" />
+  <div class="mx-auto max-w-6xl">
+    <div class="reveal mx-auto max-w-2xl text-center">
+      <span class="text-xs font-semibold tracking-[0.25em] text-white/40">{c.features.label}</span>
+      <h2 class="mt-4 font-[var(--font-display)] text-3xl font-bold sm:text-4xl">{c.features.heading}</h2>
+    </div>
+    <div class="mt-12 grid gap-5 sm:grid-cols-2">
+      {c.features.items.map((f) => (
+        <GlassCard class="reveal relative overflow-hidden p-7">
+          <Glow color={f.glow} class="-top-10 -right-10 h-40 w-40 opacity-30" />
+          <div class="h-10 w-10 rounded-xl" style={`background: ${f.glow};`}></div>
+          <h3 class="mt-5 text-xl font-semibold">{f.title}</h3>
+          <p class="mt-2 text-white/60">{f.body}</p>
+        </GlassCard>
+      ))}
+    </div>
+  </div>
+</section>
