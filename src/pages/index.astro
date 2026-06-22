@@ -1,0 +1,13 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Glow from "../components/Glow.astro";
+---
+<BaseLayout title="Inkprep" description="Find the real inks for your tattoo." lang="en" path="/">
+  <main class="relative grid min-h-screen place-items-center">
+    <Glow color="var(--color-ink-crimson)" class="top-1/4 left-1/4 h-96 w-96" />
+    <div class="glass rounded-3xl p-10 text-center">
+      <h1 class="text-4xl font-bold">Inkprep</h1>
+      <p class="mt-2 text-[var(--color-ink-muted)]">Liquid glass smoke test</p>
+    </div>
+  </main>
+</BaseLayout>
