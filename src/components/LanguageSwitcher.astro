@@ -1,0 +1,16 @@
+---
+import type { Lang } from "../i18n";
+interface Props { lang: Lang; path: string; }
+const { lang, path } = Astro.props;
+const norm = path === "/" ? "/" : path;
+const enHref = norm;
+const esHref = `/es${norm === "/" ? "/" : norm}`;
+const base = "px-2 py-1 text-sm font-medium transition";
+const active = "text-white";
+const idle = "text-white/60 hover:text-white/70";
+---
+<div class="flex items-center gap-1">
+  <a href={enHref} class={`${base} ${lang === "en" ? active : idle}`}>EN</a>
+  <span class="text-white/20">/</span>
+  <a href={esHref} class={`${base} ${lang === "es" ? active : idle}`}>ES</a>
+</div>

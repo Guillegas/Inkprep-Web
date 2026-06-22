@@ -1,0 +1,35 @@
+---
+import { getContent, type Lang } from "../i18n";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+import icon from "../assets/inkprep-icon.png";
+interface Props { lang: Lang; path: string; }
+const { lang, path } = Astro.props;
+const c = getContent(lang);
+const home = lang === "es" ? "/es/" : "/";
+---
+<header id="nav" class="fixed inset-x-0 top-0 z-50 transition-colors duration-300">
+  <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
+    <a href={home} class="flex items-center gap-2">
+      <img src={icon.src} alt="Inkprep" class="h-8 w-8 rounded-lg" width="32" height="32" />
+      <span class="text-lg font-bold tracking-tight">Inkprep</span>
+    </a>
+    <div class="hidden items-center gap-7 md:flex">
+      <a href="#features" class="text-sm text-white/60 transition hover:text-white">{c.nav.features}</a>
+      <a href="#how" class="text-sm text-white/60 transition hover:text-white">{c.nav.how}</a>
+      <a href="#faq" class="text-sm text-white/60 transition hover:text-white">{c.nav.faq}</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <LanguageSwitcher lang={lang} path={path} />
+      <a href="#download" class="hidden rounded-xl bg-white px-4 py-2 text-sm font-semibold text-black transition hover:bg-white/90 sm:inline-block">{c.nav.download}</a>
+    </div>
+  </nav>
+  <script>
+    const nav = document.getElementById("nav");
+    const onScroll = () => {
+      if (window.scrollY > 20) nav?.classList.add("glass");
+      else nav?.classList.remove("glass");
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  </script>
+</header>

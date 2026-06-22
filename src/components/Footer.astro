@@ -1,0 +1,41 @@
+---
+import { getContent, type Lang } from "../i18n";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+import icon from "../assets/inkprep-icon.png";
+import { SITE_NAME } from "../config";
+interface Props { lang: Lang; path: string; }
+const { lang, path } = Astro.props;
+const c = getContent(lang);
+const p = lang === "es" ? "/es" : "";
+const year = new Date().getFullYear();
+---
+<footer class="relative border-t border-white/10 px-5 py-12">
+  <div class="mx-auto grid max-w-6xl gap-8 sm:grid-cols-3">
+    <div>
+      <div class="flex items-center gap-2">
+        <img src={icon.src} alt="Inkprep" class="h-7 w-7 rounded-lg" width="28" height="28" />
+        <span class="font-bold">Inkprep</span>
+      </div>
+      <p class="mt-3 max-w-xs text-sm text-white/50">{c.footer.tagline}</p>
+    </div>
+    <div>
+      <h3 class="text-xs font-semibold uppercase tracking-widest text-white/60">{c.footer.product}</h3>
+      <ul class="mt-3 space-y-2 text-sm text-white/60">
+        <li><a href="#features" class="hover:text-white">{c.nav.features}</a></li>
+        <li><a href="#how" class="hover:text-white">{c.nav.how}</a></li>
+        <li><a href="#faq" class="hover:text-white">{c.nav.faq}</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-xs font-semibold uppercase tracking-widest text-white/60">{c.footer.legal}</h3>
+      <ul class="mt-3 space-y-2 text-sm text-white/60">
+        <li><a href={`${p}/terms`} class="hover:text-white">{c.footer.terms}</a></li>
+        <li><a href={`${p}/privacy`} class="hover:text-white">{c.footer.privacy}</a></li>
+      </ul>
+      <div class="mt-4"><LanguageSwitcher lang={lang} path={path} /></div>
+    </div>
+  </div>
+  <div class="mx-auto mt-10 max-w-6xl border-t border-white/10 pt-6 text-sm text-white/60">
+    © {year} {SITE_NAME}. {c.footer.rights}
+  </div>
+</footer>
