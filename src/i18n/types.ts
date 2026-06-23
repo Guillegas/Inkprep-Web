@@ -21,7 +21,7 @@ export interface Content {
     faq: string;
     download: string;
   };
-  hero: { heading: string; headingEm: string };
+  hero: { headingPre: string; headingEm1: string; headingMid: string; headingEm2: string };
   showcase: {
     label: string;
     heading: string;

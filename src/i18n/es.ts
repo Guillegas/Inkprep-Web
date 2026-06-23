@@ -14,13 +14,15 @@ const es: Content = {
     download: "Descargar",
   },
   hero: {
-    heading: "Las tintas exactas para tu diseño, listas antes de",
-    headingEm: "tatuar",
+    headingPre: "Las ",
+    headingEm1: "tintas",
+    headingMid: " exactas de tu diseño, antes de ",
+    headingEm2: "tatuar",
   },
   showcase: {
     label: "VE LOS RESULTADOS",
     heading: "Tu diseño, convertido en una paleta lista para usar",
-    body: "Sube un diseño a color limpio e Inkprep te da las tintas exactas que usar para cada color.",
+    body: "Sube un diseño a color limpio e Inkprep te da las tintas exactas.",
   },
   problem: {
     label: "POR QUÉ INKPREP",

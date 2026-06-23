@@ -14,13 +14,15 @@ const en: Content = {
     download: "Download",
   },
   hero: {
-    heading: "Know exactly which inks to use before you start",
-    headingEm: "tattooing",
+    headingPre: "Your design's exact ",
+    headingEm1: "inks",
+    headingMid: ", before you ",
+    headingEm2: "tattoo",
   },
   showcase: {
     label: "SEE THE RESULTS",
     heading: "Your design, turned into a ready-to-use palette",
-    body: "Upload a clean color design and Inkprep gives you the exact inks to use for every color.",
+    body: "Upload a clean color design and Inkprep gives you the exact inks.",
   },
   problem: {
     label: "WHY INKPREP",
